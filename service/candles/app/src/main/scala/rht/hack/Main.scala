@@ -1,5 +1,8 @@
 package rht.hack
 
+import akka.actor.{Actor, ActorPath, ActorSystem, Props}
+import rht.kafka.consumer.KafkaConsumer
+
 /**
   * Program entry point
   *
@@ -15,8 +18,7 @@ object Main extends HackathonApp {
     * @return Actor, which will be used to push events to Akka Stream
     */
   override def start(args: List[String]): SourceActor = {
-    // TODO: Implement this method to start your app
-    null
+    val system = ActorSystem("test")
+    system.actorOf(Props[TestActor](), "test")
   }
-
 }

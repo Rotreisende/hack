@@ -12,6 +12,14 @@ object Dependencies {
     "org.typelevel" %% "cats-effect" % versions.cats,
   )
 
+  lazy val json4s = Seq(
+    "org.json4s" %% "json4s-jackson" % "3.2.11"
+  )
+
+  lazy val redis = Seq(
+    "net.debasishg" %% "redisclient" % "3.30"
+  )
+
   lazy val tethys = Seq(
     "com.tethys-json" %% "tethys" % versions.tethys,
     "com.tethys-json" %% "tethys-derivation" % versions.tethys,
@@ -78,6 +86,8 @@ object Dependencies {
     // logging
     `scala-logging`,
     // other
+    redis,
+    json4s,
     enumeratum,
     config,
     newtype,
